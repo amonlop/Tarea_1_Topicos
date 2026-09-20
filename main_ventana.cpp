@@ -115,16 +115,30 @@ static void ejecutar(const Config &cfg, const Trace &t,
     if (cfg.out_query && !fq) { perror("fopen out-query"); exit(1); }
     if (cfg.out_windows && !fw) { perror("fopen out-windows"); exit(1); }
     if (fw) fprintf(fw, "win,tau_us,N,threshold\n");
-    if (fq) fprintf(fq, "win,tau_us,t_rel_s,sketch,key,N,threshold,est_f,est_hh\n");
+    // Agrega la estimación del cambio de frecuencia al CSV.
+    if (fq) fprintf(fq, "win,tau_us,t_rel_s,sketch,key,N,threshold,est_f,est_hh,est_delta\n");
 
     size_t win = 0;
+
+    Sketch deltaA(cfg.d, cfg.w, cfg.seed);
+
     for (uint64_t tau = t0 + W_us; tau <= tend; tau += p_us, ++win) {
         if (win > 0) {
+            // Guarda una copia de la subventana que va a salir para hacer la posterior comparativa.
+            Sketch subventana_sale = vd.ranura_sketch(win);
+
             vd.expirar_paso(win);
             while (hi < t.n && t.r[hi].ts_us <= tau) {
                 vd.procesar_paquete(t.r[hi].ts_us, make_key(t.r[hi], cfg.key));
                 hi++;
             }
+
+            // La ranura que se acaba de reutilizar contiene la subventana que entra
+            Sketch subventana_entra = vd.ranura_sketch(win + m);
+
+            // Delta A = subventana que entra - subventana que sale.
+            deltaA = subventana_entra;
+            deltaA.restar(subventana_sale);
         }
 
         uint64_t N = vd.N();
@@ -136,10 +150,16 @@ static void ejecutar(const Config &cfg, const Trace &t,
         if (fq) {
             for (size_t z = 0; z < query_ips.size(); ++z) {
                 long long est = vd.agregado().estimar(query_ips[z]);
+                
+                // Cálculo del delta (Estima el cambio de frecuencia entre la ventana actual y la anterior)
+                long long est_delta = (win == 0)
+                    ? 0
+                    : vd.agregado().estimar_delta(deltaA, query_ips[z]);
+
                 int hh = (est >= (long long)thr) ? 1 : 0;
-                fprintf(fq, "%zu,%" PRIu64 ",%.6f,%s,%s,%" PRIu64 ",%" PRIu64 ",%lld,%d\n",
+                fprintf(fq, "%zu,%" PRIu64 ",%.6f,%s,%s,%" PRIu64 ",%" PRIu64 ",%lld,%d,%lld\n",
                         win, tau, (double)(tau - t0) / 1e6, cfg.sketch_name.c_str(),
-                        cfg.query_text[z].c_str(), N, thr, est, hh);
+                        cfg.query_text[z].c_str(), N, thr, est, hh, est_delta);
             }
         }
     }
