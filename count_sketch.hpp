@@ -34,15 +34,63 @@ public:
         for (int i = 0; i < d_; i++) semillas_sgn_[i] = dist(rng); //de signo
     }
 
-    //por hacer
-    //c = 1 en el caso tipico; c < 0 = borrado
+    // c = 1 en el caso típico; c < 0 = borrado
     void insertar(uint32_t x, long long c = 1) {
-        
+        for (int j = 0; j < d_; j++) {
+            uint32_t pos = posicion(x, j);
+            int s = signo(x, j);
+            C_[j][pos] += (long long)s * c;
+        }
     }
 
-    //por hacer
+    // Estimador CountSketch: mediana de los estimadores por fila.
     long long estimar(uint32_t x) const {
+        std::vector<long long> estimaciones;
+        estimaciones.reserve(d_);
 
+        for (int j = 0; j < d_; j++) {
+            uint32_t pos = posicion(x, j);
+            int s = signo(x, j);
+            long long z = (long long)s * C_[j][pos];
+            estimaciones.push_back(z);
+        }
+
+        std::sort(estimaciones.begin(), estimaciones.end());
+
+        long long mediana;
+        if (d_ % 2 == 1) {
+            mediana = estimaciones[d_ / 2];
+        } else {
+            mediana = (estimaciones[d_ / 2 - 1] + estimaciones[d_ / 2]) / 2;
+        }
+
+        return std::max(0LL, mediana);
+    }
+
+    // Estimador de delta para CountSketch.
+    // Recibe el sketch deltaA = S_entra - S_sale.
+    long long estimar_delta(const CountSketch &deltaA, uint32_t x) const {
+        std::vector<long long> estimaciones;
+        estimaciones.reserve(d_);
+
+        for (int j = 0; j < d_; j++) {
+            uint32_t pos = posicion(x, j);
+            int s = signo(x, j);
+
+            long long z = (long long)s * deltaA.C_[j][pos];
+            estimaciones.push_back(z);
+        }
+
+        std::sort(estimaciones.begin(), estimaciones.end());
+
+        long long mediana;
+        if (d_ % 2 == 1) {
+            mediana = estimaciones[d_ / 2];
+        } else {
+            mediana = (estimaciones[d_ / 2 - 1] + estimaciones[d_ / 2]) / 2;
+        }
+
+        return mediana;
     }
 
     void limpiar() {

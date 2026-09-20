@@ -55,6 +55,29 @@ public:
         return freq_est;
     }
 
+    // Estimador experimental de delta para Count-Min.
+    // Para deltaA se usa la mediana, no el mínimo.
+    long long estimar_delta(const CountMin &deltaA, uint32_t x) const {
+        std::vector<long long> estimaciones;
+        estimaciones.reserve(d_);
+
+        for (int j = 0; j < d_; j++) {
+            uint32_t pos = posicion(x, j);
+            estimaciones.push_back(deltaA.C_[j][pos]);
+        }
+
+        std::sort(estimaciones.begin(), estimaciones.end());
+
+        long long mediana;
+        if (d_ % 2 == 1) {
+            mediana = estimaciones[d_ / 2];
+        } else {
+            mediana = (estimaciones[d_ / 2 - 1] + estimaciones[d_ / 2]) / 2;
+        }
+
+        return mediana;
+    }
+
     // Pone todos los contadores en 0, usado para reciclar la ranura del anillo saliente
     void limpiar() {
         for (auto &fila : C_) std::fill(fila.begin(), fila.end(), 0);
