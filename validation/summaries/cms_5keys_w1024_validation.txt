@@ -1,0 +1,108 @@
+=== Clave: 202.12.82.146 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 143801.45
+Frecuencia estimada media: 144551.58
+Error absoluto medio: 750.13
+Error absoluto máximo: 1333
+MRE: 0.005340
+
+--- Delta f ---
+Media de |delta exacto|: 5498.66
+Media de |delta estimado|: 5485.77
+Error absoluto medio: 60.63
+Error absoluto máximo: 383
+MRE: 0.042477
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 203.83.101.14 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 143314.71
+Frecuencia estimada media: 143990.98
+Error absoluto medio: 676.26
+Error absoluto máximo: 1545
+MRE: 0.005463
+
+--- Delta f ---
+Media de |delta exacto|: 6603.75
+Media de |delta estimado|: 6626.69
+Error absoluto medio: 109.90
+Error absoluto máximo: 1450
+MRE: 0.043681
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 203.83.101.148 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 232578.74
+Frecuencia estimada media: 233283.43
+Error absoluto medio: 704.69
+Error absoluto máximo: 1183
+MRE: 0.003127
+
+--- Delta f ---
+Media de |delta exacto|: 9747.46
+Media de |delta estimado|: 9756.07
+Error absoluto medio: 71.99
+Error absoluto máximo: 397
+MRE: 0.119694
+Signo correcto: 82/83
+
+--- Deltas con signo incorrecto ---
+ventana 50: exact_delta=29, est_delta=-169
+
+=== Clave: 203.83.117.211 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 1035592.94
+Frecuencia estimada media: 1036407.56
+Error absoluto medio: 814.62
+Error absoluto máximo: 1677
+MRE: 0.000787
+
+--- Delta f ---
+Media de |delta exacto|: 2831.31
+Media de |delta estimado|: 2823.05
+Error absoluto medio: 74.02
+Error absoluto máximo: 745
+MRE: 0.272127
+Signo correcto: 78/83
+
+--- Deltas con signo incorrecto ---
+ventana 5: exact_delta=14, est_delta=-131
+ventana 12: exact_delta=-697, est_delta=48
+ventana 35: exact_delta=203, est_delta=-162
+ventana 42: exact_delta=-122, est_delta=54
+ventana 79: exact_delta=88, est_delta=-86
+
+=== Clave: 31.141.14.54 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 201273.79
+Frecuencia estimada media: 202175.01
+Error absoluto medio: 901.23
+Error absoluto máximo: 1728
+MRE: 0.004588
+
+--- Delta f ---
+Media de |delta exacto|: 9011.72
+Media de |delta estimado|: 9015.47
+Error absoluto medio: 48.13
+Error absoluto máximo: 388
+MRE: 0.012218
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.

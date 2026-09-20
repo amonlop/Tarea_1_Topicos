@@ -1,0 +1,104 @@
+=== Clave: 202.12.82.146 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 143801.45
+Frecuencia estimada media: 143907.46
+Error absoluto medio: 106.01
+Error absoluto máximo: 154
+MRE: 0.000747
+
+--- Delta f ---
+Media de |delta exacto|: 5498.66
+Media de |delta estimado|: 5500.73
+Error absoluto medio: 6.80
+Error absoluto máximo: 46
+MRE: 0.003639
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 203.83.101.14 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 143314.71
+Frecuencia estimada media: 143413.95
+Error absoluto medio: 99.24
+Error absoluto máximo: 139
+MRE: 0.000864
+
+--- Delta f ---
+Media de |delta exacto|: 6603.75
+Media de |delta estimado|: 6605.16
+Error absoluto medio: 8.35
+Error absoluto máximo: 61
+MRE: 0.019560
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 203.83.101.148 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 232578.74
+Frecuencia estimada media: 232757.73
+Error absoluto medio: 178.99
+Error absoluto máximo: 289
+MRE: 0.000801
+
+--- Delta f ---
+Media de |delta exacto|: 9747.46
+Media de |delta estimado|: 9748.71
+Error absoluto medio: 11.11
+Error absoluto máximo: 72
+MRE: 0.007552
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 203.83.117.211 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 1035592.94
+Frecuencia estimada media: 1035707.17
+Error absoluto medio: 114.23
+Error absoluto máximo: 191
+MRE: 0.000110
+
+--- Delta f ---
+Media de |delta exacto|: 2831.31
+Media de |delta estimado|: 2829.41
+Error absoluto medio: 7.93
+Error absoluto máximo: 40
+MRE: 0.027542
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
+
+=== Clave: 31.141.14.54 ===
+Ventanas comparadas: 84
+
+--- Frecuencia f ---
+Frecuencia exacta media: 201273.79
+Frecuencia estimada media: 201377.92
+Error absoluto medio: 104.13
+Error absoluto máximo: 136
+MRE: 0.000524
+
+--- Delta f ---
+Media de |delta exacto|: 9011.72
+Media de |delta estimado|: 9012.59
+Error absoluto medio: 5.64
+Error absoluto máximo: 23
+MRE: 0.001717
+Signo correcto: 83/83
+
+--- Deltas con signo incorrecto ---
+No hubo errores de signo.
