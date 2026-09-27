@@ -1,0 +1,24 @@
+===============================================================================================
+TABLA RESUMEN: EVALUACIÓN DE SKETCHES EN DETECCIÓN DE ATAQUES (SECCIÓN 6.2)
+Traza Base: 201812031400.bin | W = 60 s, p = 10 s, m = 6, phi = 0.01
+===============================================================================================
+
+Ataque   Sketch   w      Memoria    MRE (J)      MAE (J)    Ventana Det.   Latencia     Diagnóstico             
+-----------------------------------------------------------------------------------------------
+DDOS     CMS      256      70.0 KB   3.9559%      7232.4  win=25 (tau=310s) 10.0 s       Exacta                  
+DDOS     CMS      1024    280.0 KB   0.8272%      1537.1  win=25 (tau=310s) 10.0 s       Exacta                  
+DDOS     CMS      4096   1120.0 KB   0.1869%       350.4  win=25 (tau=310s) 10.0 s       Exacta                  
+DDOS     CS       256      70.0 KB   0.1573%       232.9  win=25 (tau=310s) 10.0 s       Exacta                  
+DDOS     CS       1024    280.0 KB   0.0430%        95.6  win=25 (tau=310s) 10.0 s       Exacta                  
+DDOS     CS       4096   1120.0 KB   0.0060%        12.1  win=25 (tau=310s) 10.0 s       Exacta                  
+SCAN     CMS      256      70.0 KB   5.7075%      8382.1  win=25 (tau=310s) 10.0 s       Falso Positivo Temprano 
+SCAN     CMS      1024    280.0 KB   0.6578%       978.5  win=26 (tau=320s) 20.0 s       Exacta                  
+SCAN     CMS      4096   1120.0 KB   0.0691%       101.2  win=26 (tau=320s) 20.0 s       Exacta                  
+SCAN     CS       256      70.0 KB  11.8565%     14327.4  win=26 (tau=320s) 20.0 s       Exacta                  
+SCAN     CS       1024    280.0 KB   0.8142%      1031.2  win=26 (tau=320s) 20.0 s       Exacta                  
+SCAN     CS       4096   1120.0 KB   0.0126%        18.5  win=26 (tau=320s) 20.0 s       Exacta                  
+-----------------------------------------------------------------------------------------------
+Referencia Exacta DDoS: Detectado en win=25 (tau=310s), Latencia = 10.0 s
+Referencia Exacta Scan: Detectado en win=26 (tau=320s), Latencia = 20.0 s
+Ventanas en conjunto J (afectadas por el ataque): 8 ventanas (tau = 310s a 380s)
+===============================================================================================

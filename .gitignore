@@ -1,0 +1,14 @@
+# Binarios compilados
+bin/
+
+# Trazas binarias pesadas
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+
+# Salidas temporales
+out_*.csv
+win_*.csv
+toy.bin
