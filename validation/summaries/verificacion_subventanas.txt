@@ -1,0 +1,20 @@
+[OK]    attacks/results/cms_ddos_w1024.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cms_ddos_w256.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cms_ddos_w4096.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_ddos_w1024.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_ddos_w256.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_ddos_w4096.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cms_scan_w1024.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cms_scan_w256.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cms_scan_w4096.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_scan_w1024.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_scan_w256.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    attacks/results/cs_scan_w4096.csv: 84 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_min/cms_5keys_w1024.csv: 420 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_min/cms_5keys_w256.csv: 420 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_min/cms_5keys_w4096.csv: 420 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_sketch/cs_5keys_w1024.csv: 420 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_sketch/cs_5keys_w256.csv: 420 filas, N_j idéntico al de exact_hh
+[OK]    validation/count_sketch/cs_5keys_w4096.csv: 420 filas, N_j idéntico al de exact_hh
+
+RESULTADO: 18 de 18 archivos coinciden ventana por ventana , por ende, subventanas correctamente alineadas.
